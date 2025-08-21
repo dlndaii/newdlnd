@@ -16,14 +16,14 @@ var dlnd = {
   expires_date: "2099-12-18T01:04:17Z",
   grace_period_expires_date: null,
   unsubscribe_detected_at: null,
-  original_purchase_date: "1997-08-16T00:00:00Z",
-  purchase_date: "1997-08-16T00:00:00Z",
+  original_purchase_date: "2025-09-02T00:00:00Z",
+  purchase_date: "2025-09-02T00:00:00Z",
   store: "app_store"
 };
 
 var dlnd_subscription = {
   grace_period_expires_date: null,
-  purchase_date: "1997-08-16T00:00:00Z",
+  purchase_date: "2025-09-02T00:00:00Z",
   product_identifier: "com.dlnd.premium.yearly",
   expires_date: "2099-12-18T01:04:17Z"
 };
@@ -44,5 +44,6 @@ if (match) {
 
 
 $done({ body: JSON.stringify(obj) });
+
 
 
