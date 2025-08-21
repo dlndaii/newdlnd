@@ -21,7 +21,7 @@ var dlnd = {
   store: "app_store"
 };
 
-var locket01 = {
+var dlnd_subscription = {
   grace_period_expires_date: null,
   purchase_date: "2025-08-16T00:00:00Z",
   product_identifier: "com.dlnd.premium.yearly",
@@ -33,14 +33,15 @@ const match = Object.keys(mapping).find(e => ua.includes(e));
 if (match) {
   let [e, s] = mapping[match];
   s
-    ? (locket01.product_identifier = s,
+    ? (dlnd_subscription.product_identifier = s,
        obj.subscriber.subscriptions[s] = dlnd)
     : obj.subscriber.subscriptions["com.dlnd.premium.yearly"] = dlnd;
-  obj.subscriber.entitlements[e] = locket01;
+  obj.subscriber.entitlements[e] = dlnd_subscription;
 } else {
   obj.subscriber.subscriptions["com.dlnd.premium.yearly"] = dlnd;
-  obj.subscriber.entitlements.pro = locket01;
+  obj.subscriber.entitlements.pro = dlnd_subscription;
 }
 
 
 $done({ body: JSON.stringify(obj) });
+
